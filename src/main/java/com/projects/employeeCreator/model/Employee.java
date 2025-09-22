@@ -1,4 +1,4 @@
-package com.projects.employeeCreator;
+package com.projects.employeeCreator.model;
 
 import jakarta.persistence.*;
 
@@ -9,7 +9,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private int age;
@@ -20,7 +20,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String firstName, String lastName, int age, String email, String department) {
+    public Employee(Integer id, String firstName, String lastName, int age, String email, String department) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,11 +29,11 @@ public class Employee {
         this.department = department;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

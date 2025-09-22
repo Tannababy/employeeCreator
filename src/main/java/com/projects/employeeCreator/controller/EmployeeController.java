@@ -1,5 +1,6 @@
-package com.projects.employeeCreator;
+package com.projects.employeeCreator.controller;
 
+import com.projects.employeeCreator.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
