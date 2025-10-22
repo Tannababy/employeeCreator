@@ -1,8 +1,11 @@
 package com.projects.employeeCreator.controller;
 
+import com.projects.employeeCreator.dto.EmployeeDTO;
 import com.projects.employeeCreator.model.Employee;
 import com.projects.employeeCreator.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -22,7 +25,12 @@ public class EmployeeController {
         return employeeService.createEmployee(employee);
     }
     // Endpoint to getEmployeesById
+
     // Endpoint to getAllEmployees
+    @GetMapping
+    public List<EmployeeDTO> getAllEmployees() {
+        return employeeService.getAllEmployees();
+    }
     // Endpoint to updateEmployee
     // Endpoint to deleteEmployee
 }
