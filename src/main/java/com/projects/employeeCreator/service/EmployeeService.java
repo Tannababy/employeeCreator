@@ -13,14 +13,17 @@ public class EmployeeService {
 
     public final EmployeeRepository employeeRepository;
 
+    // constructor
     public EmployeeService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
+    // function to save new employees to database
     public Employee createEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
+    // function to retrieve list of all employees from database
     public List<EmployeeDTO> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
         List<EmployeeDTO> employeeDTOs = new ArrayList<>();
@@ -37,6 +40,12 @@ public class EmployeeService {
             employeeDTOs.add(newDTO);
         }
         return employeeDTOs;
+    }
+
+    // function to delete employees by their id
+    public void deleteEmployeeById(int id) {
+            employeeRepository.deleteById(id);
+
     }
 
 }
