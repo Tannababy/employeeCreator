@@ -19,12 +19,14 @@ public class EmployeeService {
     }
 
     // function to save new employees to database
-    public Employee createEmployee(Employee employee) {
-        return employeeRepository.save(employee);
+    public void createEmployee(Employee employee) {
+
+        employeeRepository.save(employee);
     }
 
     // function to retrieve list of all employees from database
     public List<EmployeeDTO> getAllEmployees() {
+
         List<Employee> employees = employeeRepository.findAll();
         List<EmployeeDTO> employeeDTOs = new ArrayList<>();
 
